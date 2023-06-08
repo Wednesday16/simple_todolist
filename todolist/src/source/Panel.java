@@ -66,7 +66,9 @@ public class Panel extends JPanel implements ActionListener {
 		if (!(nodeNum >= 10) && !(nodeText.length() > MAX_TEXT_LENGTH)) {
 			input.setText(null);
 			Node currentNode = new Node(nodeText, this, UNIT_SIZE, nodeNum);
-			JButton deleteButton = new JButton(new AbstractAction() {
+			Icon deleteIcon = new ImageIcon("./icons/delete_button");
+			JButton deleteButton = new JButton(deleteIcon);
+			deleteButton.addActionListener(new AbstractAction() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					deleteNode();
